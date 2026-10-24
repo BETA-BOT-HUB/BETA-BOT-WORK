@@ -8,6 +8,70 @@
   <title>Beta Bot Hub — Bots that move the internet</title>
   <meta name="google-site-verification" content="pbQNmaUC55QFPOUoJWgGvUf3CDpVfaO_4-n2XpvS7a8" />
   <style>
+    /* Netlify badge blocker */
+    #nl-badge-frame, #nl-hud-frame {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+    }
+
+    /* Custom Powered by SHIV floating badge */
+    .shiv-floating-badge {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 999999;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 16px 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(93, 231, 255, 0.35);
+      background: linear-gradient(180deg, rgba(17, 25, 54, 0.95), rgba(7, 10, 23, 0.95));
+      color: #f5f7ff;
+      text-decoration: none;
+      font-size: 13px;
+      font-family: "Space Grotesk", -apple-system, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(93, 231, 255, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.25s ease;
+    }
+    .shiv-floating-badge:hover {
+      border-color: rgba(93, 231, 255, 0.9);
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.6), 0 0 25px rgba(93, 231, 255, 0.45);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .shiv-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #5de7ff;
+      box-shadow: 0 0 8px #5de7ff;
+      animation: shivPulse 2s infinite ease-in-out;
+    }
+    .shiv-badge-label {
+      color: #929bb9;
+      font-weight: 500;
+    }
+    .shiv-badge-name {
+      color: #5de7ff;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #5de7ff 0%, #fc7fc7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes shivPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
     :root {
@@ -262,6 +326,10 @@
   </style>
 </head>
 <body>
+  <!-- Netlify HUD script blocker -->
+  <div id="nl-badge-frame" style="display:none !important;"></div>
+  <div id="nl-hud-frame" style="display:none !important;"></div>
+
   <div class="intro" id="intro" aria-label="Welcome to Beta Bot Hub">
     <div class="intro-inner">
       <div class="intro-mark" aria-hidden="true">
@@ -489,5 +557,11 @@
       });
     });
   </script>
+
+  <!-- Floating Powered by SHIV badge -->
+  <a href="https://t.me/lll_SHIV_lll" target="_blank" rel="noopener noreferrer" class="shiv-floating-badge" title="Developer @lll_SHIV_lll">
+    <span class="shiv-badge-dot" aria-hidden="true"></span>
+    <span><span class="shiv-badge-label">Powered by</span> <span class="shiv-badge-name">SHIV</span></span>
+  </a>
 </body>
 </html>
